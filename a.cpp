@@ -6,12 +6,14 @@ using namespace std;
 float velocidade();
 float velocidadei();
 float tempo();
+float posicaoi();
+
 int main()
 {
     setlocale(LC_ALL, "");
     int op;
  cout<< "DIGITE O NUMERO CORRESPONDENTE AO QUE PRECISSA:\n";
- cout<< "1: Velocidade\n2: Velocidade Inicial\n3: Tempo\n4: Posição inicial\n5: Posição final\n6: Delta S\n";
+ cout<< "1: Velocidade\n2: Velocidade Inicial\n3: Tempo\n4: PosiÃ§Ã£o\n5: PosiÃ§Ã£o inicial\n6: Delta S\n";
  cin>>op;
  system("cls");
  switch(op)
@@ -26,6 +28,8 @@ int main()
  case 3:
     tempo();
     break;
+ case 4:
+    posicaoi();
 }
 }
 
@@ -35,7 +39,7 @@ float velocidade()
     cout<<"Achando a velocidade\n\n";
     cout<<"Informe o tempo(t): ";
     cin>>t;
-    cout<<"Informe a aceleração(a): ";
+    cout<<"Informe a aceleraÃ§Ã£o(a): ";
     cin>>a;
     cout<<"Informe a velocidade inicial(v0): ";
     cin>>v0;
@@ -51,7 +55,7 @@ float velocidadei()
     cout<<"Achando a velocidade Inicial\n\n";
     cout<<"Informe o tempo(t): ";
     cin>>t;
-    cout<<"Informe a aceleração(a): ";
+    cout<<"Informe a aceleraÃ§Ã£o(a): ";
     cin>>a;
     cout<<"Informe a velocidade(V): ";
     cin>>v;
@@ -78,7 +82,7 @@ float tempo()
     cout<<"Achando o tempo\n\n";
     cout<<"Informe a velocidade inicial(v0): ";
     cin>>v0;
-    cout<<"Informe a aceleração(a): ";
+    cout<<"Informe a aceleraÃ§Ã£o(a): ";
     cin>>a;
     cout<<"Informe a velocidade(V): ";
     cin>>v;
@@ -99,3 +103,26 @@ float tempo()
         cout<<"t="<<(v+v0)/a;
     }
 }
+
+float posicaoi()
+{
+    float s, s0, v0, a, t, v, r;
+    cout<<"Achando a PosiÃ§Ã£o\n\n";
+    cout<<"Informe a velocidade inicial(v0): ";
+    cin>>v0;
+    cout<<"Informe a aceleraÃ§Ã£o(a): ";
+    cin>>a;
+    cout<<"Informe o tempo(t): ";
+    cin>>t;
+    cout<<"Informe a posiÃ§Ã£o inicial(S0): ";
+    cin>>s0;
+    cout<<"\nS=S0+V0*t+a*tÂ²/2\n\n";
+    cout<<"S="<<s0<<"+"<<v0<<"*"<<t<<"+"<<a<<"*"<<t<<"Â²"<<"/2\n";
+    r=t*t;
+    cout<<"S="<<s0<<"+"<<v0*t<<"+"<<a<<"*"<<r<<"/2\n";
+    cout<<"S="<<s0<<"+"<<v0*t<<"+"<<a*r<<"/2\n";
+    cout<<"S="<<s0+v0*t+a*r<<"/2\n";
+    cout<<"S="<<s0+v0*t+a*r/2<<"\n";
+    
+}
+
